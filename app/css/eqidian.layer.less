@@ -1,0 +1,62 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0
+}
+
+.eqidian-layer-hide {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .6);
+    z-index: 99998;
+}
+
+.eqidian-layer {
+    font-size: 14px;
+    width: 16rem;
+    min-height: 10rem;
+    background: #FFF;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    -ms-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+    z-index: 99999;
+    border-radius: 6px;
+    overflow: hidden;
+    .eqidian-layer-header {}
+    .eqidian-layer-footer {
+        width: 100%;
+        height: 2.6rem;
+        line-height: 2.6rem;
+        background: rgba(0, 0, 0, .3);
+        position: absolute;
+        bottom: 0;
+        button {
+            float: left;
+            width: 50%;
+            margin: 0;
+            padding: 0;
+            border: none;
+            height: 100%;
+            outline: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            font-size: 15px;
+            &.eqdian-btns-confirm{
+                color: #FFF;
+                background: #DA1A30;
+            }
+            &.eqdian-btns-cancel{
+                background: #DDDDDD;
+            }
+        }
+    }
+}
