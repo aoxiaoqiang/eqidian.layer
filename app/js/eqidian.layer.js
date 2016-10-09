@@ -48,7 +48,7 @@
 
     // 装配DOM节点
     YungouLayer.prototype.initDom = function() {
-        var eaidianLayer = this.createElement('div', 'eqidian-layer');
+        var eaidianLayer = this.createElement('div', 'eqidian-layer animated fadeIn');
         var layerTitle = this.createElement('div', 'eqidian-layer-header'),
             layerCloseBtn = this.createElement('div', 'btn-close'),
             layerContent = this.createElement('div', 'eqidian-layer-content'),
@@ -90,7 +90,7 @@
         eaidianLayer.appendChild(layerFooter);
         this.dom = eaidianLayer;
 
-        var hideShadow = this.createElement('div', 'eqidian-layer-hide');
+        var hideShadow = this.createElement('div', 'eqidian-layer-hide animated fadeIn');
         this.hideShadow = hideShadow;
     }
 

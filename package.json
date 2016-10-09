@@ -1,0 +1,28 @@
+{
+  "name": "eqidian.layer",
+  "version": "1.0.0",
+  "description": "eqidian.layer",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aoxiaoqiang/eqidian.layer.git"
+  },
+  "keywords": [
+    "layer",
+    "eqidian"
+  ],
+  "author": "aoxiaoqiang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aoxiaoqiang/eqidian.layer/issues"
+  },
+  "homepage": "https://github.com/aoxiaoqiang/eqidian.layer#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-uglify": "^2.0.0"
+  }
+}
