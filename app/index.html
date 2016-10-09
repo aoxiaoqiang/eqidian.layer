@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 
 <head>
     <meta charset="UTF-8">
@@ -12,28 +12,22 @@
 
 <body>
     <button class="btn-open">打开提示</button>
-    <div class="eqidian-layer-hide"></div>
-    <div class="eqidian-layer">
-        <div class="eqidian-layer-header"> 标题 </div>
-        <div class="eqidian-layer-content">
-            message
-        </div>
-        <div class="eqidian-layer-footer">
-            <button class="eqdian-btns-cancel">取消</button>
-            <button class="eqdian-btns-confirm">确定</button>
-        </div>
-    </div>
 </body>
 
 </html>
 <script type="text/javascript">
 // 为按钮绑定事件触发弹窗
-// var btn = document.querySelector('.btn-open');
-// btn.addEventListener('click', function() {
-//     var layer = new Layer({
-//         title: '普通提示框',
-//         text: 'Web前端开发是从网页制作演变而来的，名称上有很明显的时代特征。在互联网的演化进程中，网页制作是Web1.0时代的产物，那时网站的主要内容都是静态的，用户使用网站的行为也以浏览为主。2005年以后，互联网进入Web2.0时代，各种类似桌面软件的Web应用大量涌现，网站的前端由此发生了翻天覆地的变化。'
-//     });
-//     layer.show();
-// });
+var btn = document.querySelector('.btn-open');
+btn.addEventListener('click', function() {
+    new YungouLayer({
+        // type: 'info',
+        // title: '普通提示框',
+        text: '一起云购提示一起云购提示一起云购提示 Layer 组件',
+        // isTextCenter: true,
+        btns: ['残忍拒绝', '积极参与'],
+        ok: function(){
+            window.location.reload();
+        }
+    }).show();
+});
 </script>
