@@ -5,32 +5,31 @@
 (function() {
     /* Layer的DOM结构
     *------------------
-	<div class="eqidian-layer-hide"></div>
-	<div class="eqidian-layer">
-	    <div class="btn-close"></div>
-	    <div class="eqidian-layer-header">标题</div>
-	    <div class="eqidian-layer-content">
-	        操作成功！
-	    </div>
-	    <div class="eqidian-layer-footer">
-	        <button class="eqidian-btns-cancel">取消</button>
-	        <button class="eqidian-btns-confirm">确定</button>
-	    </div>
-	</div>
-	--------------*/
+    <div class="eqidian-layer-hide"></div>
+    <div class="eqidian-layer">
+        <div class="btn-close"></div>
+        <div class="eqidian-layer-header">标题</div>
+        <div class="eqidian-layer-content">
+            操作成功！
+        </div>
+        <div class="eqidian-layer-footer">
+            <button class="eqidian-btns-cancel">取消</button>
+            <button class="eqidian-btns-confirm">确定</button>
+        </div>
+    </div>
+    --------------*/
 
     // 构造函数
     function YungouLayer(obj) {
         this.type = obj.type || 'confirm';
 
-        this.title = obj.title || null;
+        this.title = obj.title;
         this.text = obj.text;
         this.btns = obj.btns || ['取消', '确定'];
 
         this.cancel = obj.cancel || null;
         this.ok = obj.ok || null;
 
-        this.canClose = obj.canClose || false;
         this.isTextCenter = obj.isTextCenter;
         this.createElement = function(tag, classNameText) {
             var el = document.createElement(tag);
@@ -59,7 +58,7 @@
         var infoBtn = this.createElement('button', 'eqidian-btns-info'),
             cancelBtn = this.createElement('button', 'eqidian-btns-cancel'),
             confirmBtn = this.createElement('button', 'eqidian-btns-confirm');
-        infoBtn.innerText = this.btns[1];
+        infoBtn.innerText = this.btns[0];
         cancelBtn.innerText = this.btns[0];
         confirmBtn.innerText = this.btns[1];
 
@@ -71,11 +70,6 @@
         // 是否装载标题
         if (this.title != null && this.title != undefined) {
             eaidianLayer.appendChild(layerTitle);
-        }
-
-        // 装载右上角关闭按钮
-        if (this.canClose == true) {
-            eaidianLayer.appendChild(layerCloseBtn);
         }
 
         // 装载确认按钮
@@ -97,18 +91,21 @@
     // 装配事件
     YungouLayer.prototype.initEvent = function() {
         this.dom.addEventListener('click', function(event) {
+            // 取消回调方法
             if (event.target.tagName == 'BUTTON' && event.target.className == 'eqidian-btns-cancel') {
                 if (this.cancel) {
                     this.cancel();
                 }
                 this.hide();
             }
+            // 确定回调方法
             if (event.target.tagName == 'BUTTON' && event.target.className == 'eqidian-btns-confirm') {
                 if (this.ok) {
                     this.ok();
                 }
                 this.hide();
             }
+            // 关闭回调方法
             if (event.target.className == 'btn-close' || event.target.className == 'eqidian-btns-info') {
                 this.hide();
             }
