@@ -22,12 +22,20 @@ var btn = document.querySelector('.btn-open');
 btn.addEventListener('click', function() {
     new YungouLayer({
         // type: 'info',
-        // title: '普通提示框',
+        title: '普通提示框',
         text: '一起云购提示一起云购提示一起云购提示 Layer 组件',
-        // isTextCenter: true,
-        btns: ['残忍拒绝', '积极参与'],
+        isTextCenter: true,
+        btns: ['狠心离开', '积极参与'],
         ok: function(){
-            window.location.reload();
+            new YungouLayer({ 
+                type:'info', 
+                text:'你选择了确定', 
+                btns: ['确定'], 
+                isTextCenter: true
+            }).show();
+        },
+        cancel: function(){
+            alert('haha');
         }
     }).show();
 });
